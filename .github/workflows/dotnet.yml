@@ -18,8 +18,10 @@ jobs:
       with:
         dotnet-version: | 
           6.0.x
-    - name: Restore dependencies
-      run: dotnet restore -s https://pkgs.dev.azure.com/azure-sdk/public/_packaging/azure-sdk-for-net/nuget/v3/index.json
+    - name: Restore dev dependencies
+      run: dotnet restore src/CallingServer.Sdk.Client.Extensions -s https://pkgs.dev.azure.com/azure-sdk/public/_packaging/azure-sdk-for-net/nuget/v3/index.json         
+    - name: Restore regular dependencies
+      run: dotnet restore --ignore-failed-sources
     - name: Build
       run: dotnet build --no-restore
     - name: Unit Tests
