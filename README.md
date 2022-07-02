@@ -1,5 +1,7 @@
 # Azure Communication Service Event Handler Library
 
+[![.NET](https://github.com/jasonshave/Azure.Communication.Service/actions/workflows/dotnet.yml/badge.svg)](https://github.com/jasonshave/Azure.Communication.Service/actions/workflows/dotnet.yml)
+
 This .NET library provides a set of convenience layer services and extensions to the `Azure.Communication.Service.CallingServer` and `Azure.Communication.Service.JobRouter` libraries currently in Public/Private preview.
 
 ## Common event handling and orchestration challenges
