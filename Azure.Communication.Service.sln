@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CallingServer.Sdk.Client.Extensions", "src\CallingServer.Sdk.Client.Extensions\CallingServer.Sdk.Client.Extensions.csproj", "{168EAB16-1AFF-4E80-9309-12636913CC9D}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CallingServer.Sdk.EventHandler", "src\CallingServer.Sdk.EventHandler\CallingServer.Sdk.EventHandler.csproj", "{E840FCCE-0028-4247-B219-514A438DBC1B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CallingServer.Sdk.Contracts", "src\CallingServer.Sdk.Contracts\CallingServer.Sdk.Contracts.csproj", "{B258BD4A-2BF0-45D9-8756-D3315E8026F2}"
@@ -25,10 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{168EAB16-1AFF-4E80-9309-12636913CC9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{168EAB16-1AFF-4E80-9309-12636913CC9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{168EAB16-1AFF-4E80-9309-12636913CC9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{168EAB16-1AFF-4E80-9309-12636913CC9D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E840FCCE-0028-4247-B219-514A438DBC1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E840FCCE-0028-4247-B219-514A438DBC1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E840FCCE-0028-4247-B219-514A438DBC1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
