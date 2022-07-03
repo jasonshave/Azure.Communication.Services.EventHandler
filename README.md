@@ -140,53 +140,6 @@ public class MyService : BackgroundService
 }
 ```
 
-## CallingServerClient configuration
-
-1. Clone this repository and add it as a reference to your .NET project.
-2. Set your Azure Communication Service `ConnectionString` property in your [.NET User Secrets store](https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-6.0&tabs=windows), `appsettings.json`, or anywhere your `IConfiguration` provider can look for the `QueueClientSettings`. For example:
-
-    ```json
-    {
-        "CallingServerClientSettings" : {
-            "ConnectionString": "[your_connection_string]"
-        }
-    }
-    ```
-
-## CallingServerClient dependency injection configuration
-
-1. Add the following to your .NET 6 or higher `Program.cs` file:
-
-    ```csharp
-    var builder = WebApplication.CreateBuilder(args);
-
-    // add this line to allow DI for the CallingServerClient
-    builder.Services.AddCallingServerClient(options => 
-        builder.Configuration.Bind(nameof(CallingServerClientSettings), options));
-    
-    var app = builder.Build();
-
-    app.Run();
-    ```
-
-## Injecting the CallingServerClient using DI
-
-Following the guidance in the configuration section above, the `CallingServerClient` is registered as a singleton in .NET's dependency injection container. Simply use it with constructor injection as follows:
-
-```csharp
-public class Worker
-{
-    private readonly CallingServerClient _client;
-
-    public Worker(CallingServerClient client) => _client = client;
-
-    public async Task DoWork()
-    {
-        await _client.CreateCallAsync();
-    }
-}
-```
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](license.md) file for details.
