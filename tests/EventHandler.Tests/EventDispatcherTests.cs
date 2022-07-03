@@ -1,9 +1,9 @@
 ﻿using AutoFixture;
 using FluentAssertions;
 using JasonShave.Azure.Communication.Service.CallingServer.Sdk.Contracts.V2022_11_1_preview.Events;
-using JasonShave.Azure.Communication.Service.CallingServer.Sdk.EventHandler;
+using JasonShave.Azure.Communication.Service.EventHandler.CallingServer;
 
-namespace Azure.Communication.Service.Tests;
+namespace EventHandler.Tests;
 
 public class EventDispatcherTests
 {

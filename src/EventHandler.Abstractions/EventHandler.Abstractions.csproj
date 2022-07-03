@@ -9,8 +9,20 @@
   </PropertyGroup>
 
 	<ItemGroup>
-		<InternalsVisibleTo Include="JobRouter.Sdk.EventHandler" />
-		<InternalsVisibleTo Include="CallingServer.Sdk.EventHandler" />
+		<InternalsVisibleTo Include="EventHandler.JobRouter" />
+		<InternalsVisibleTo Include="EventHandler.CallingServer" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<!-- Make assembly visible to test assembly -->
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+			<_Parameter1>$(AssemblyName).Tests</_Parameter1>
+		</AssemblyAttribute>
+
+		<!-- Make assembly usable for Moq, so Moq is able to instanciate objects of 'internal' types -->
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+			<_Parameter1>DynamicProxyGenAssembly2</_Parameter1>
+		</AssemblyAttribute>
 	</ItemGroup>
 
 	<ItemGroup>

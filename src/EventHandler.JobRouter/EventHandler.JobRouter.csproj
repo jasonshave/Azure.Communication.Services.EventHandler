@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>JasonShave.Azure.Communication.Service.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>JasonShave.Azure.Communication.Service.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Description>A library using a publish/subscribe pattern to easily handle different events being sent via Event Grid by Azure Communication Services primitives.</Description>
+    <Copyright>Jason Shave</Copyright>
+    <Company>Jason Shave</Company>
+    <Authors>Jason Shave</Authors>
+    <PackageProjectUrl>https://github.com/jasonshave/Azure.Communication.Services.EventHandler</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>jasonshave.png</PackageIcon>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>azure;azure-communication-services;jasonshave;job-router</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
+	</ItemGroup>
+
+  <ItemGroup>
+		<!-- Make assembly visible to test assembly -->
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+			<_Parameter1>$(AssemblyName).Tests</_Parameter1>
+		</AssemblyAttribute>
+
+		<!-- Make assembly usable for Moq, so Moq is able to instanciate objects of 'internal' types -->
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+			<_Parameter1>DynamicProxyGenAssembly2</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\images\jasonshave.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\EventHandler.Abstractions\EventHandler.Abstractions.csproj" />
+    <ProjectReference Include="..\JobRouter.Sdk.Contracts\JobRouter.Sdk.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

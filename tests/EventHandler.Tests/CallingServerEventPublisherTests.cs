@@ -1,12 +1,12 @@
-﻿using System.Text.Json;
-using AutoFixture;
-using JasonShave.Azure.Communication.Service.CallingServer.Sdk.EventHandler;
+﻿using AutoFixture;
 using JasonShave.Azure.Communication.Service.EventHandler.Abstractions;
 using JasonShave.Azure.Communication.Service.EventHandler.Abstractions.Interfaces;
+using JasonShave.Azure.Communication.Service.EventHandler.CallingServer;
 using Microsoft.Extensions.Logging;
 using Moq;
+using System.Text.Json;
 
-namespace Azure.Communication.Service.Tests;
+namespace EventHandler.Tests;
 
 public class CallingServerEventPublisherTests
 {

@@ -1,9 +1,9 @@
-﻿using System.Text.Json;
-using AutoFixture;
+﻿using AutoFixture;
 using FluentAssertions;
 using JasonShave.Azure.Communication.Service.EventHandler.Abstractions;
+using System.Text.Json;
 
-namespace Azure.Communication.Service.Tests;
+namespace EventHandler.Tests;
 
 public class EventConverterTests
 {

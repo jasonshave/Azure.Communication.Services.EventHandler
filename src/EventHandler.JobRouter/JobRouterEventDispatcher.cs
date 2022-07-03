@@ -1,7 +1,7 @@
 ﻿using JasonShave.Azure.Communication.Service.EventHandler.Abstractions.Interfaces;
 using JasonShave.Azure.Communication.Service.JobRouter.Sdk.Contracts.V2021_10_20_preview.Events;
 
-namespace JasonShave.Azure.Communication.Service.JobRouter.Sdk.EventHandler;
+namespace JasonShave.Azure.Communication.Service.EventHandler.JobRouter;
 
 internal class JobRouterEventDispatcher : IEventDispatcher<JobRouter>, IJobRouterEventSubscriber
 {

@@ -1,8 +1,8 @@
 using FluentAssertions;
-using JasonShave.Azure.Communication.Service.CallingServer.Sdk.EventHandler;
 using JasonShave.Azure.Communication.Service.EventHandler.Abstractions;
+using JasonShave.Azure.Communication.Service.EventHandler.CallingServer;
 
-namespace Azure.Communication.Service.Tests
+namespace EventHandler.Tests
 {
     public class EventCatalogTests
     {

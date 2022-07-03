@@ -23,4 +23,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Unit Tests
-      run: dotnet test tests/Azure.Communication.Service.Tests/ --no-build --verbosity normal -p:ParallelizeTestCollections=false
+      run: dotnet test tests/Azure.Communication.Service.EventHandler.Tests/ --no-build --verbosity normal -p:ParallelizeTestCollections=false

@@ -1,9 +1,9 @@
-﻿using JasonShave.Azure.Communication.Service.EventHandler.Abstractions;
+﻿using JasonShave.Azure.Communication.Service.CallingServer.Sdk.Contracts.V2022_11_1_preview.Events;
+using JasonShave.Azure.Communication.Service.EventHandler.Abstractions;
 using JasonShave.Azure.Communication.Service.EventHandler.Abstractions.Interfaces;
-using JasonShave.Azure.Communication.Service.CallingServer.Sdk.Contracts.V2022_11_1_preview.Events;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace JasonShave.Azure.Communication.Service.CallingServer.Sdk.EventHandler;
+namespace JasonShave.Azure.Communication.Service.EventHandler.CallingServer;
 
 public static class EventHandlerBuilderExtensions
 {

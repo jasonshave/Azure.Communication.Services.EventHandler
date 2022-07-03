@@ -3,7 +3,7 @@ using JasonShave.Azure.Communication.Service.EventHandler.Abstractions.Interface
 using JasonShave.Azure.Communication.Service.JobRouter.Sdk.Contracts.V2021_10_20_preview.Events;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace JasonShave.Azure.Communication.Service.JobRouter.Sdk.EventHandler;
+namespace JasonShave.Azure.Communication.Service.EventHandler.JobRouter;
 
 public static class EventHandlerBuilderExtensions
 {

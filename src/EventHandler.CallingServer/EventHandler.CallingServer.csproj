@@ -7,9 +7,17 @@
     <AssemblyName>JasonShave.Azure.Communication.Service.$(MSBuildProjectName)</AssemblyName>
     <RootNamespace>JasonShave.Azure.Communication.Service.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Description>A library using a publish/subscribe pattern to easily handle different events being sent via HTTP web hook callbacks by Azure Communication Services Interaction Controller.</Description>
+    <Description>A library using a publish/subscribe pattern to easily handle different events being sent via HTTP web hook callbacks by Azure Communication Services primitives.</Description>
     <Copyright>Jason Shave</Copyright>
-    <PackageProjectUrl>https://github.com/jasonshave/CallingServer.Extensions</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/jasonshave/Azure.Communication.Services.EventHandler</PackageProjectUrl>
+    <Company>Jason Shave</Company>
+    <Authors>Jason Shave</Authors>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>jasonshave.png</PackageIcon>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>azure;azure-communication-services;jasonshave;calling-server;interaction-controller</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>
@@ -28,7 +36,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<InternalsVisibleTo Include="Azure.Communication.Service.Tests" />
+		<InternalsVisibleTo Include="EventHandler.Tests" />
+		<None Include="..\..\images\jasonshave.png">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\..\README.md">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
 		<ProjectReference Include="..\EventHandler.Abstractions\EventHandler.Abstractions.csproj" />
 		<ProjectReference Include="..\CallingServer.Sdk.Contracts\CallingServer.Sdk.Contracts.csproj" />
 	</ItemGroup>
