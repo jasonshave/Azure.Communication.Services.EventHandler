@@ -1,5 +1,5 @@
 using FluentAssertions;
-using JasonShave.Azure.Communication.Service.EventHandler.Abstractions;
+using JasonShave.Azure.Communication.Service.EventHandler;
 using JasonShave.Azure.Communication.Service.EventHandler.CallingServer;
 
 namespace EventHandler.Tests

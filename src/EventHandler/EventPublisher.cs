@@ -1,7 +1,6 @@
-﻿using JasonShave.Azure.Communication.Service.EventHandler.Abstractions.Interfaces;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 
-namespace JasonShave.Azure.Communication.Service.EventHandler.Abstractions;
+namespace JasonShave.Azure.Communication.Service.EventHandler;
 
 public class EventPublisher<TPrimitive> : IEventPublisher<TPrimitive>
     where TPrimitive : IPrimitive

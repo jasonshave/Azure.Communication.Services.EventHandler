@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobRouter.Sdk.Contracts", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventHandler.JobRouter", "src\EventHandler.JobRouter\EventHandler.JobRouter.csproj", "{4EADBE12-B7FF-4D6F-99EA-460CC8A6F881}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventHandler.Abstractions", "src\EventHandler.Abstractions\EventHandler.Abstractions.csproj", "{9380D76C-5F66-44DC-8501-AC6128D7CA29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventHandler", "src\EventHandler\EventHandler.csproj", "{9380D76C-5F66-44DC-8501-AC6128D7CA29}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventHandler.Tests", "tests\EventHandler.Tests\EventHandler.Tests.csproj", "{155611DF-1F28-4DA5-9819-D36B111E8FC7}"
 EndProject

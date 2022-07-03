@@ -1,8 +1,7 @@
-﻿using JasonShave.Azure.Communication.Service.EventHandler.Abstractions.Interfaces;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using System.Text.Json;
 
-namespace JasonShave.Azure.Communication.Service.EventHandler.Abstractions;
+namespace JasonShave.Azure.Communication.Service.EventHandler;
 
 public static class ServiceCollectionExtensions
 {

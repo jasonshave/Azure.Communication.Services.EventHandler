@@ -1,7 +1,6 @@
-﻿using JasonShave.Azure.Communication.Service.EventHandler.Abstractions.Interfaces;
-using System.Text.Json;
+﻿using System.Text.Json;
 
-namespace JasonShave.Azure.Communication.Service.EventHandler.Abstractions;
+namespace JasonShave.Azure.Communication.Service.EventHandler;
 
 public class JsonEventConverter : IEventConverter
 {

@@ -48,7 +48,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\EventHandler.Abstractions\EventHandler.Abstractions.csproj" />
+    <ProjectReference Include="..\EventHandler\EventHandler.csproj" />
     <ProjectReference Include="..\JobRouter.Sdk.Contracts\JobRouter.Sdk.Contracts.csproj" />
   </ItemGroup>
 

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace JasonShave.Azure.Communication.Service.EventHandler.Abstractions;
+namespace JasonShave.Azure.Communication.Service.EventHandler;
 
 public class EventHandlerBuilder
 {

@@ -1,6 +1,4 @@
-﻿using JasonShave.Azure.Communication.Service.EventHandler.Abstractions.Interfaces;
-
-namespace JasonShave.Azure.Communication.Service.EventHandler.Abstractions;
+﻿namespace JasonShave.Azure.Communication.Service.EventHandler;
 
 public class EventCatalogService<TPrimitive> : IEventCatalog<TPrimitive>
     where TPrimitive : IPrimitive

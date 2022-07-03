@@ -1,6 +1,4 @@
-﻿using JasonShave.Azure.Communication.Service.EventHandler.Abstractions;
-using JasonShave.Azure.Communication.Service.EventHandler.Abstractions.Interfaces;
-using JasonShave.Azure.Communication.Service.JobRouter.Sdk.Contracts.V2021_10_20_preview.Events;
+﻿using JasonShave.Azure.Communication.Service.JobRouter.Sdk.Contracts.V2021_10_20_preview.Events;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace JasonShave.Azure.Communication.Service.EventHandler.JobRouter;

@@ -45,7 +45,7 @@
 		  <Pack>True</Pack>
 		  <PackagePath>\</PackagePath>
 		</None>
-		<ProjectReference Include="..\EventHandler.Abstractions\EventHandler.Abstractions.csproj" />
+		<ProjectReference Include="..\EventHandler\EventHandler.csproj" />
 		<ProjectReference Include="..\CallingServer.Sdk.Contracts\CallingServer.Sdk.Contracts.csproj" />
 	</ItemGroup>
 </Project>

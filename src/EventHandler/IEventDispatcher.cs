@@ -1,4 +1,4 @@
-﻿namespace JasonShave.Azure.Communication.Service.EventHandler.Abstractions.Interfaces;
+﻿namespace JasonShave.Azure.Communication.Service.EventHandler;
 
 public interface IEventDispatcher<TPrimitive>
     where TPrimitive : IPrimitive

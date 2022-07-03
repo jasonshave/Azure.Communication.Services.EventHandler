@@ -1,6 +1,6 @@
 ﻿using AutoFixture;
 using FluentAssertions;
-using JasonShave.Azure.Communication.Service.EventHandler.Abstractions;
+using JasonShave.Azure.Communication.Service.EventHandler;
 using System.Text.Json;
 
 namespace EventHandler.Tests;

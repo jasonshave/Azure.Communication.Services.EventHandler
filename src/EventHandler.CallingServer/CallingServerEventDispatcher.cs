@@ -1,5 +1,4 @@
 ﻿using JasonShave.Azure.Communication.Service.CallingServer.Sdk.Contracts.V2022_11_1_preview.Events;
-using JasonShave.Azure.Communication.Service.EventHandler.Abstractions.Interfaces;
 
 namespace JasonShave.Azure.Communication.Service.EventHandler.CallingServer;
 
