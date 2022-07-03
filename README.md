@@ -1,4 +1,4 @@
-# Azure Communication Service Event Handler Library
+# Azure Communication Services Event Handler Library
 
 [![.NET](https://github.com/jasonshave/Azure.Communication.Service/actions/workflows/dotnet.yml/badge.svg)](https://github.com/jasonshave/Azure.Communication.Service/actions/workflows/dotnet.yml)
 
