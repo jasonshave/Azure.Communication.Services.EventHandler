@@ -8,7 +8,7 @@
     <license type="expression">MIT</license>
     <icon>icon.png</icon>
     <projectUrl>https://github.com/jasonshave/Azure.Communication.Services.EventHandler</projectUrl>
-    <readme>docs\readme.md</readme>
+    <readme>docs\README.md</readme>
     <description>A simple Event Handler library used with Azure Communication Services primitives for publishing/subscribing and handling Calling Server events.</description>
     <releaseNotes>Initial release.</releaseNotes>
     <copyright>Copyright 2022</copyright>
