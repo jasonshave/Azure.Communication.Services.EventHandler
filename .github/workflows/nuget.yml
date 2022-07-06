@@ -2,8 +2,6 @@ name: Nuget
 
 on:
   push:
-    paths:
-      - 'src/EventHandler.CallingServer/*'
     tags:
       - 'v*'
 
@@ -24,6 +22,10 @@ jobs:
       with:
         dotnet-version: | 
           6.0.x
+
+    - name: Setup NuGet.exe
+    - uses: actions/setup-nuget@v1
+
     - name: Restore dependencies
       run: dotnet restore
 
@@ -35,7 +37,10 @@ jobs:
       uses: battila7/get-version-action@v2
 
     - name: Package EventHandler.CallingServer Project
-      run: dotnet pack src/EventHandler.CallingServer --no-restore --no-build --configuration Release --include-symbols -p:PackageVersion=${{ steps.version.outputs.version-without-v }} --output ${{ env.PACKAGE_OUTPUT }}
+      run: nuget pack src/EventHandler.CallingServer/ -Prop Configuration=Release -Version ${{ steps.version.outputs.version-without-v }} -IncludeReferencedProjects -OutputDirectory ${{ env.PACKAGE_OUTPUT }}
 
-    - name: Publish EventHandler.CallingServer Package
+    - name: Package EventHandler.JobRouter Project
+      run: nuget pack src/EventHandler.JobRouter/ -Prop Configuration=Release -Version ${{ steps.version.outputs.version-without-v }} -IncludeReferencedProjects -OutputDirectory ${{ env.PACKAGE_OUTPUT }}
+
+    - name: Publish Packages
       run: dotnet nuget push ${{ env.PACKAGE_OUTPUT }}/*.nupkg -k ${{ secrets.NUGET_KEY }} -s ${{ env.NUGET_URL }} --skip-duplicate

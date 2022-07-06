@@ -1,7 +1,7 @@
 ﻿namespace JasonShave.Azure.Communication.Service.EventHandler;
 
 public class EventCatalogService<TPrimitive> : IEventCatalog<TPrimitive>
-    where TPrimitive : IPrimitive
+    where TPrimitive : IPrimitivePublisher
 {
     private const string _eventPrefix = "Microsoft.Communication.";
     private readonly Dictionary<string, Type> _eventCatalog = new();

@@ -3,7 +3,7 @@
 namespace JasonShave.Azure.Communication.Service.EventHandler;
 
 public class EventPublisher<TPrimitive> : IEventPublisher<TPrimitive>
-    where TPrimitive : IPrimitive
+    where TPrimitive : IPrimitivePublisher
 {
     private readonly ILogger<EventPublisher<TPrimitive>> _logger;
     private readonly IEventCatalog<TPrimitive> _eventCatalog;
@@ -23,6 +23,11 @@ public class EventPublisher<TPrimitive> : IEventPublisher<TPrimitive>
     }
 
     public void Publish(BinaryData data, string eventName, string contextId)
+    {
+        Publish(data.ToString(), eventName, contextId);
+    }
+
+    public void Publish(string data, string eventName, string contextId)
     {
         _logger.LogDebug($"Interaction event publisher handling: {eventName}");
         var eventType = _eventCatalog.Get(eventName);

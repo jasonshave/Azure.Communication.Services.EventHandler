@@ -1,5 +1,5 @@
 ﻿namespace JasonShave.Azure.Communication.Service.EventHandler.CallingServer;
 
-public struct CallingServer : IPrimitive
+public struct CallingServer : IPrimitivePublisher
 {
 }

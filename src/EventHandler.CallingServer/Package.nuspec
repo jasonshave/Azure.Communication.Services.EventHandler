@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>JasonShave.Azure.Communication.Service.EventHandler.CallingServer</id>
+    <authors>Jason Shave</authors>
+    <owners>Jason Shave</owners>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <icon>icon.png</icon>
+    <projectUrl>https://github.com/jasonshave/Azure.Communication.Services.EventHandler</projectUrl>
+    <description>A simple Event Handler library used with Azure Communication Services primitives for publishing/subscribing and handling Calling Server events.</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright 2022</copyright>
+    <version>1.0.0</version>
+    <tags>Azure-Communication-Services EventHandler Jason-Shave JasonShave ACS CallingServer Calling Server PSTN</tags>
+  </metadata>
+  <files>
+    <file src="icon.png" target=""/>
+  </files>
+</package>

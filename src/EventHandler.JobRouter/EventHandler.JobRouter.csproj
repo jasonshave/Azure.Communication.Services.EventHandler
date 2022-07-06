@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -6,14 +6,14 @@
     <Nullable>enable</Nullable>
     <AssemblyName>JasonShave.Azure.Communication.Service.$(MSBuildProjectName)</AssemblyName>
     <RootNamespace>JasonShave.Azure.Communication.Service.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <Description>A library using a publish/subscribe pattern to easily handle different events being sent via Event Grid by Azure Communication Services primitives.</Description>
     <Copyright>Jason Shave</Copyright>
     <Company>Jason Shave</Company>
     <Authors>Jason Shave</Authors>
     <PackageProjectUrl>https://github.com/jasonshave/Azure.Communication.Services.EventHandler</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageIcon>jasonshave.png</PackageIcon>
+    <PackageIcon>icon.png</PackageIcon>
     <RepositoryType>git</RepositoryType>
     <PackageTags>azure;azure-communication-services;jasonshave;job-router</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -37,7 +37,7 @@
 	</ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\images\jasonshave.png">
+    <None Include="..\EventHandler\icon.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
@@ -48,8 +48,8 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\EventHandler\EventHandler.csproj" />
-    <ProjectReference Include="..\JobRouter.Sdk.Contracts\JobRouter.Sdk.Contracts.csproj" />
+    <ProjectReference Include="..\EventHandler\EventHandler.csproj"/>
+    <ProjectReference Include="..\JobRouter.Sdk.Contracts\JobRouter.Sdk.Contracts.csproj"/>
   </ItemGroup>
 
 </Project>

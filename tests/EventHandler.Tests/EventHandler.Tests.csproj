@@ -35,7 +35,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\EventHandler.Abstractions\EventHandler.csproj" />
     <ProjectReference Include="..\..\src\EventHandler.CallingServer\EventHandler.CallingServer.csproj" />
     <ProjectReference Include="..\..\src\EventHandler\EventHandler.csproj" />
   </ItemGroup>

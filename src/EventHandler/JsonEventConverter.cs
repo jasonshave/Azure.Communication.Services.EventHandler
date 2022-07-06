@@ -16,10 +16,4 @@ public class JsonEventConverter : IEventConverter
         var result = JsonSerializer.Deserialize(eventPayload, eventType, _serializerOptions);
         return result;
     }
-
-    public object? Convert(BinaryData data, Type eventType)
-    {
-        var result = JsonSerializer.Deserialize(data, eventType, _serializerOptions);
-        return result;
-    }
 }

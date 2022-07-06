@@ -23,7 +23,7 @@ public class CallingServerEventPublisherTests
         var mockLogger = new Mock<ILogger<EventPublisher<CallingServer>>>();
 
         mockEventCatalog.Setup(c => c.Get(It.IsAny<string>())).Returns(typeof(StartEvent));
-        mockEventConverter.Setup(c => c.Convert(It.IsAny<BinaryData>(), It.IsAny<Type>())).Returns(startEvent);
+        mockEventConverter.Setup(c => c.Convert(It.IsAny<string>(), It.IsAny<Type>())).Returns(startEvent);
         mockEventDispatcher.Setup(d => d.Dispatch(It.IsAny<object>(), It.IsAny<Type>(), It.IsAny<string>()));
 
         var subject = new EventPublisher<CallingServer>(
@@ -37,7 +37,7 @@ public class CallingServerEventPublisherTests
 
         // assert
         mockEventCatalog.Verify(x => x.Get(It.IsAny<string>()), Times.Once);
-        mockEventConverter.Verify(x => x.Convert(It.IsAny<BinaryData>(), It.IsAny<Type>()), Times.Once);
+        mockEventConverter.Verify(x => x.Convert(It.IsAny<string>(), It.IsAny<Type>()), Times.Once);
         mockEventDispatcher.Verify(x => x.Dispatch(It.IsAny<object>(), It.IsAny<Type>(), It.IsAny<string>()), Times.Once);
     }
 }

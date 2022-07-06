@@ -5,39 +5,30 @@ namespace JasonShave.Azure.Communication.Service.CallingServer.Sdk.Contracts.V20
 [Serializable]
 public class IncomingCall
 {
-    [JsonPropertyName("to")]
-    public Identifier To { get; set; }
+    public Identifier To { get; set; } = default!;
 
-    [JsonPropertyName("from")]
-    public Identifier From { get; set; }
+    public Identifier From { get; set; } = default!;
 
-    [JsonPropertyName("hasIncomingVideo")]
     public bool HasIncomingVideo { get; set; }
 
-    [JsonPropertyName("callerDisplayName")]
-    public string CallerDisplayName { get; set; }
+    public string CallerDisplayName { get; set; } = default!;
 
-    [JsonPropertyName("incomingCallContext")]
-    public string IncomingCallContext { get; set; }
+    public string IncomingCallContext { get; set; } = default!;
 
-    [JsonPropertyName("correlationId")]
-    public string CorrelationId { get; set; }
+    public string CorrelationId { get; set; } = default!;
 
 }
 
 [Serializable]
 public class Identifier
 {
-    [JsonPropertyName("rawId")]
-    public string RawId { get; set; }
+    public string RawId { get; set; } = default!;
 
-    [JsonPropertyName("phoneNumber")]
-    public PhoneNumber PhoneNumber { get; set; }
+    public PhoneNumber PhoneNumber { get; set; } = default!;
 }
 
 [Serializable]
 public class PhoneNumber
 {
-    [JsonPropertyName("value")]
-    public string Value { get; set; }
+    public string Value { get; set; } = default!;
 }
