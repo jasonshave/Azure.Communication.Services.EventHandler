@@ -8,7 +8,7 @@
     <license type="expression">MIT</license>
     <icon>icon.png</icon>
     <projectUrl>https://github.com/jasonshave/Azure.Communication.Services.EventHandler</projectUrl>
-    <readme>https://github.com/jasonshave/Azure.Communication.Services.EventHandler/readme.md</readme>
+    <readme>readme.md</readme>
     <description>A simple Event Handler library used with Azure Communication Services primitives for publishing/subscribing and handling Job Router events.</description>
     <releaseNotes>Initial release.</releaseNotes>
     <copyright>Copyright 2022</copyright>
@@ -17,5 +17,6 @@
   </metadata>
   <files>
     <file src="icon.png" target=""/>
+    <file src="..\..\README.md" target=""/>
   </files>
 </package>
