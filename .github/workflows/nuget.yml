@@ -22,6 +22,8 @@ jobs:
       with:
         dotnet-version: | 
           6.0.x
+
+    - uses: actions/setup-nuget@v1
     - name: Restore dependencies
       run: dotnet restore
 
@@ -32,13 +34,10 @@ jobs:
       id: version
       uses: battila7/get-version-action@v2
 
-    
     - name: Package EventHandler.CallingServer Project
-    - uses: actions/setup-nuget@v1
       run: nuget pack src/EventHandler.CallingServer/ -Prop Configuration=Release -Version ${{ steps.version.outputs.version-without-v }} -IncludeReferencedProjects -OutputDirectory ${{ env.PACKAGE_OUTPUT }}
 
     - name: Package EventHandler.JobRouter Project
-    - uses: actions/setup-nuget@v1
       run: nuget pack src/EventHandler.JobRouter/ -Prop Configuration=Release -Version ${{ steps.version.outputs.version-without-v }} -IncludeReferencedProjects -OutputDirectory ${{ env.PACKAGE_OUTPUT }}
 
     - name: Publish Packages
