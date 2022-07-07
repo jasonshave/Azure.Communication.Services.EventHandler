@@ -16,6 +16,14 @@ public class EventDispatcherTests
         var callConnectedEvent = fixture.Create<CallConnectedEvent>();
         var callDisconnectedEvent = fixture.Create<CallDisconnectedEvent>();
         var callConnectionStateChangedEvent = fixture.Create<CallConnectionStateChanged>();
+        var addParticipantSucceededEvent = fixture.Create<AddParticipantSucceeded>();
+        var addParticipantFailedEvent = fixture.Create<AddParticipantFailed>();
+        var callTransferAcceptedEvent = fixture.Create<CallTransferAccepted>();
+        var callTransferFailedEvent = fixture.Create<CallTransferFailed>();
+        var removeParticipantSucceededEvent = fixture.Create<RemoveParticipantSucceeded>();
+        var removeParticipantFailedEvent = fixture.Create<RemoveParticipantFailed>();
+        var participantUpdatedEvent = fixture.Create<ParticipantUpdated>();
+
         var incomingCall = fixture.Create<IncomingCall>();
 
         var subject = new CallingServerEventDispatcher();
@@ -58,11 +66,74 @@ public class EventDispatcherTests
             return ValueTask.CompletedTask;
         };
 
+        subject.OnAddParticipantSucceeded += (@event, contextId) =>
+        {
+            @event.Should().NotBeNull();
+            @event.Should().BeOfType<AddParticipantSucceeded>();
+            contextId.Should().BeNullOrEmpty();
+            return ValueTask.CompletedTask;
+        };
+
+        subject.OnAddParticipantFailed += (@event, contextId) =>
+        {
+            @event.Should().NotBeNull();
+            @event.Should().BeOfType<AddParticipantFailed>();
+            contextId.Should().BeNullOrEmpty();
+            return ValueTask.CompletedTask;
+        };
+
+        subject.OnCallTransferAccepted += (@event, contextId) =>
+        {
+            @event.Should().NotBeNull();
+            @event.Should().BeOfType<CallTransferAccepted>();
+            contextId.Should().BeNullOrEmpty();
+            return ValueTask.CompletedTask;
+        };
+
+        subject.OnCallTransferFailed += (@event, contextId) =>
+        {
+            @event.Should().NotBeNull();
+            @event.Should().BeOfType<CallTransferFailed>();
+            contextId.Should().BeNullOrEmpty();
+            return ValueTask.CompletedTask;
+        };
+
+        subject.OnRemoveParticipantSucceeded += (@event, contextId) =>
+        {
+            @event.Should().NotBeNull();
+            @event.Should().BeOfType<RemoveParticipantSucceeded>();
+            contextId.Should().BeNullOrEmpty();
+            return ValueTask.CompletedTask;
+        };
+
+        subject.OnRemoveParticipantFailed += (@event, contextId) =>
+        {
+            @event.Should().NotBeNull();
+            @event.Should().BeOfType<RemoveParticipantFailed>();
+            contextId.Should().BeNullOrEmpty();
+            return ValueTask.CompletedTask;
+        };
+
+        subject.OnParticipantUpdated += (@event, contextId) =>
+        {
+            @event.Should().NotBeNull();
+            @event.Should().BeOfType<ParticipantUpdated>();
+            contextId.Should().BeNullOrEmpty();
+            return ValueTask.CompletedTask;
+        };
+
         // act
         subject.Dispatch(callConnectedEvent, typeof(CallConnectedEvent), testId);
         subject.Dispatch(callDisconnectedEvent, typeof(CallDisconnectedEvent), testId);
         subject.Dispatch(callConnectionStateChangedEvent, typeof(CallConnectionStateChanged), testId);
         subject.Dispatch(incomingCall, typeof(IncomingCall));
+        subject.Dispatch(addParticipantSucceededEvent, typeof(AddParticipantSucceeded));
+        subject.Dispatch(addParticipantFailedEvent, typeof(AddParticipantFailed));
+        subject.Dispatch(removeParticipantSucceededEvent, typeof(RemoveParticipantSucceeded));
+        subject.Dispatch(removeParticipantFailedEvent, typeof(RemoveParticipantFailed));
+        subject.Dispatch(callTransferAcceptedEvent, typeof(CallTransferAccepted));
+        subject.Dispatch(callTransferFailedEvent, typeof(CallTransferFailed));
+        subject.Dispatch(participantUpdatedEvent, typeof(ParticipantUpdated));
     }
 
     [Fact(DisplayName = "Null context should invoke")]
@@ -100,7 +171,7 @@ public class EventDispatcherTests
 
         // act
         subject.OnIncomingCall += HandleIncomingCall;
-        
+
         ValueTask HandleIncomingCall(IncomingCall @event, string? contextId)
         {
             return ValueTask.CompletedTask;
