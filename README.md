@@ -116,7 +116,6 @@ public class MyService : BackgroundService
         _jobRouterSubscriber = jobRouterSubscriber
     }
     
-
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         // subscribe to Calling Server and Job Router events
