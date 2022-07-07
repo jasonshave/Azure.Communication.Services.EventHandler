@@ -4,7 +4,7 @@
 
 This repository contains libraries which act as a set of convenience layer services to the `Azure.Communication.Service.CallingServer` and `Azure.Communication.Service.JobRouter` libraries currently in preview.
 
-## Common event handling and orchestration challenges
+## Problem statement
 
 A common task developers must undertake with an event-driven platform is to deal with a common event payload which wraps a variation of models often denoted with a type identifier. Consider the following event, `CallConnectionStateChanged` which is 'wrapped' in an `Azure.Messaging.CloudEvent` type:
 
@@ -26,18 +26,18 @@ A common task developers must undertake with an event-driven platform is to deal
 }
 ```
 
-Since this event is triggered by a web hook callback, the API controller consuming this `CloudEvent` type must extract the body by reading the `HttpRequest` object, typically asynchronously, then deserialize it to it's proper type as follows:
+Since this event is triggered by a web hook callback, the API controller consuming this `CloudEvent` type must extract the body by reading the `HttpRequest` object, typically asynchronously, then deserialize it to it's proper type. The `CloudEvent` open specification provides a `type` property to aid developers in understanding the `data` payload type. The following example illustrates the cumbersome nature of handling different data payloads in a single `CloudEvent` envelope:
 
 ```csharp
+// get body from HttpRequest
 string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+
+// deserialize into an array of CloudEvent types
 CloudEvent[] cloudEvents = JsonSerializer.Deserialize<CloudEvent[]>(requestBody);
-```
 
-You then need to invoke conditional logic with "magic strings" against the `type` property to understand what payload exists in the `data` object, then deserialize and cast it into something useful as follows:
-
-```csharp
 foreach(var cloudEvent in cloudEvents)
 {
+    // conditional logic for every possible event type
     if (cloudEvent.Type == "Microsoft.Communication.CallConnectionStateChanged")
     {
         CallConnectionStateChanged @event = JsonSerializer.Deserialize<CallConnectionStateChanged>(cloudEvent.Data);        
@@ -105,42 +105,28 @@ As mentioned above, the `CloudEvent` or `EventGridEvent` is pushed and the corre
 ```csharp
 public class MyService : BackgroundService
 {
-    private readonly ICallingServerEventSubscriber _callingServerSubscriber;
-    private readonly IJobRouterEventSubscriber _jobRouterSubscriber;
-
     public MyService(
         ICallingServerEventSubscriber callingServerSubscriber,
         IJobRouterEventSubscriber jobRouterSubscriber)
     {
-        _callingServerSubscriber = callingServerSubscriber;
-        _jobRouterSubscriber = jobRouterSubscriber
+        // subscribe to Calling Server and Job Router events
+        callingServerSubscriber.OnCallConnectionStateChanged += HandleOnCallConnectionStateChanged;
+        jobRouterSubscriber.OnJobQueued += HandleOnJobQueued;
     }
     
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        // subscribe to Calling Server and Job Router events
-        _callingServerSubscriber.OnCallConnectionStateChanged += HandleOnCallConnectionStateChanged;
-        _jobRouterSubscriber.OnJobQueued += HandleOnJobQueued;
-
         while (!cancellationToken.IsCancellationRequested)
         {
             Task.Delay(1000, cancellationToken);
         }
-
-        return Task.CompletedTask;
     }
 
-    private Task HandleOnCallConnectionStateChanged(CallConnectionStateChanged args, string contextId)
-    {
+    private async Task HandleOnCallConnectionStateChanged(CallConnectionStateChanged args, string contextId) =>
         _logger.LogInformation($"Call connection ID: {args.CallConnectionId} | Context: {contextId}");
-        return Task.CompletedTask;
-    }
 
-    private Task HandleOnJobQueued(RouterJobQueued jobQueued, string contextId)
-    {
+    private Task HandleOnJobQueued(RouterJobQueued jobQueued, string contextId) =>
         _logger.LogInformation($"Job {jobQueued.JobId} in queue {jobQueued.QueueId}")
-        return Task.CompletedTask;
-    }
 }
 ```
 
