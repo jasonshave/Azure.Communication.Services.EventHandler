@@ -50,9 +50,16 @@ Unfortunately this conditional logic handling needs to be done by every customer
 
 ## CallingServer and/or JobRouter Configuration
 
-1. If you're using the CallingServer SDK, get the NuGet package from [here](https://www.nuget.org/packages/JasonShave.Azure.Communication.Service.EventHandler.CallingServer).
-2. If you're using the Job Router SDK, get the NuGet package from [here](https://www.nuget.org/packages/JasonShave.Azure.Communication.Service.EventHandler.JobRouter).
-3. Add the following to your .NET 6 or higher `Program.cs` file:
+The following NuGet packages are available depending on if you want to handle CallingServer events, JobRouter events, or both.
+
+| Package | Latest | Details
+|--|--|--|
+| EventHandler.CallingServer | [![Nuget](https://img.shields.io/nuget/v/JasonShave.Azure.Communication.Service.EventHandler.CallingServer.svg?style=flat)](https://www.nuget.org/packages/JasonShave.Azure.Communication.Service.EventHandler.CallingServer/)   | Used with ACS ServerCalling SDK |
+| EventHandler.JobRouter | [![Nuget](https://img.shields.io/nuget/v/JasonShave.Azure.Communication.Service.EventHandler.JobRouter.svg?style=flat)](https://www.nuget.org/packages/JasonShave.Azure.Communication.Service.EventHandler.JobRouter/) | Used with ACS JobRouter SDK |
+
+For a typical .NET 6 web application, the following configuration can be made to wire up the publishers, event catalog, dispatcher, and allow you to subscribe to events from either platform.
+
+1. Add the following to your .NET 6 or higher `Program.cs` file:
 
     ```csharp
     var builder = WebApplication.CreateBuilder(args);
