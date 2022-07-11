@@ -10,10 +10,7 @@
 		<Nullable>enable</Nullable>
         <Authors>jasonshave@hotmail.com</Authors>
         <Company>Jason Shave</Company>
-        <Copyright>Copyright © Jason Shave 2022</Copyright>
-        <Platform>x64</Platform>
-        <Platforms>$(Platform)</Platforms>
-        <PlatformTarget>$(Platform)</PlatformTarget>        
+        <Copyright>Copyright © Jason Shave 2022</Copyright>    
     </PropertyGroup>
 	<ItemGroup>
 		<AdditionalFiles Include="$(MSBuildThisFileDirectory)rulesets\stylecop.json" />
