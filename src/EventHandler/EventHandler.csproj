@@ -12,7 +12,7 @@
   </PropertyGroup>
 
 	<ItemGroup>
-
+		<InternalsVisibleTo Include="EventHandler.Tests"/>
 		<InternalsVisibleTo Include="JasonShave.Azure.Communication.Service.EventHandler.CallingServer" />
 		<InternalsVisibleTo Include="JasonShave.Azure.Communication.Service.EventHandler.JobRouter" />
 	</ItemGroup>

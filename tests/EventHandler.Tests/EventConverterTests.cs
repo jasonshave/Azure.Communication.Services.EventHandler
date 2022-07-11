@@ -1,11 +1,12 @@
 ﻿// Copyright (c) 2022 Jason Shave. All rights reserved.
 // Licensed under the MIT License.
 
+using System.Text.Json;
 using AutoFixture;
 using FluentAssertions;
-using System.Text.Json;
+using JasonShave.Azure.Communication.Service.EventHandler;
 
-namespace JasonShave.Azure.Communication.Service.EventHandler.Tests;
+namespace EventHandler.Tests;
 
 public class EventConverterTests
 {

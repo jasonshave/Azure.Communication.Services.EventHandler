@@ -1,14 +1,15 @@
 ﻿// Copyright (c) 2022 Jason Shave. All rights reserved.
 // Licensed under the MIT License.
 
+using System.Text.Json;
 using AutoFixture;
+using FluentAssertions;
+using JasonShave.Azure.Communication.Service.EventHandler;
+using JasonShave.Azure.Communication.Service.EventHandler.CallingServer;
 using Microsoft.Extensions.Logging;
 using Moq;
-using System.Text.Json;
-using FluentAssertions;
-using JasonShave.Azure.Communication.Service.EventHandler.CallingServer;
 
-namespace JasonShave.Azure.Communication.Service.EventHandler.Tests;
+namespace EventHandler.Tests;
 
 public class CallingServerEventPublisherTests
 {
