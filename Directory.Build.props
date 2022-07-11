@@ -5,8 +5,8 @@
         <RunCodeAnalysis>false</RunCodeAnalysis>
         <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)rulesets\compound.ruleset</CodeAnalysisRuleSet>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
-        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<DebugType>Full</DebugType>
+        <!-- <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild> -->
+		<!-- <DebugType>Full</DebugType> -->
 		<Nullable>enable</Nullable>
         <Authors>jasonshave@hotmail.com</Authors>
         <Company>Jason Shave</Company>
