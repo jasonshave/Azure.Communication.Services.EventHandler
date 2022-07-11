@@ -3,7 +3,7 @@
         <AssemblyName>JasonShave.Azure.Communication.Service.$(MSBuildProjectName)</AssemblyName>
         <RootNamespace>JasonShave.Azure.Communication.Service.$(MsBuildProjectName)</RootNamespace>
         <RunCodeAnalysis>false</RunCodeAnalysis>
-        <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)rulesets\compound.ruleset</CodeAnalysisRuleSet>
+        <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)rulesets\stylecop.ruleset</CodeAnalysisRuleSet>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
 		<DebugType>Full</DebugType>

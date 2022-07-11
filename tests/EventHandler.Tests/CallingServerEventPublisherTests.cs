@@ -4,12 +4,11 @@
 using System.Text.Json;
 using AutoFixture;
 using FluentAssertions;
-using JasonShave.Azure.Communication.Service.EventHandler;
 using JasonShave.Azure.Communication.Service.EventHandler.CallingServer;
 using Microsoft.Extensions.Logging;
 using Moq;
 
-namespace EventHandler.Tests;
+namespace JasonShave.Azure.Communication.Service.EventHandler.Tests;
 
 public class CallingServerEventPublisherTests
 {

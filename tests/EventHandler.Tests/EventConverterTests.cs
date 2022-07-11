@@ -4,9 +4,8 @@
 using System.Text.Json;
 using AutoFixture;
 using FluentAssertions;
-using JasonShave.Azure.Communication.Service.EventHandler;
 
-namespace EventHandler.Tests;
+namespace JasonShave.Azure.Communication.Service.EventHandler.Tests;
 
 public class EventConverterTests
 {

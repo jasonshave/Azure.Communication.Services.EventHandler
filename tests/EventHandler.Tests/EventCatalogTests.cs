@@ -2,10 +2,9 @@
 // Licensed under the MIT License.
 
 using FluentAssertions;
-using JasonShave.Azure.Communication.Service.EventHandler;
 using JasonShave.Azure.Communication.Service.EventHandler.CallingServer;
 
-namespace EventHandler.Tests
+namespace JasonShave.Azure.Communication.Service.EventHandler.Tests
 {
     public class EventCatalogTests
     {

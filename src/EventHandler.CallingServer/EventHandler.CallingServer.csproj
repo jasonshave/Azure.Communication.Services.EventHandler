@@ -34,7 +34,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<InternalsVisibleTo Include="EventHandler.Tests" />
+		<InternalsVisibleTo Include="JasonShave.Azure.Communication.Service.EventHandler.Tests" />
 		<None Include="..\..\.editorconfig" Link=".editorconfig" />
 		<None Include="..\..\README.md">
 		  <Pack>True</Pack>

@@ -6,7 +6,7 @@ using FluentAssertions;
 using JasonShave.Azure.Communication.Service.CallingServer.Sdk.Contracts.V2022_11_1_preview.Events;
 using JasonShave.Azure.Communication.Service.EventHandler.CallingServer;
 
-namespace EventHandler.Tests;
+namespace JasonShave.Azure.Communication.Service.EventHandler.Tests;
 
 public class EventDispatcherTests
 {

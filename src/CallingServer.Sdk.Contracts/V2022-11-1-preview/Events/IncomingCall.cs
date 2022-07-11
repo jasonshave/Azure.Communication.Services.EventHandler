@@ -17,7 +17,6 @@ public class IncomingCall
     public string IncomingCallContext { get; set; } = default!;
 
     public string CorrelationId { get; set; } = default!;
-
 }
 
 [Serializable]

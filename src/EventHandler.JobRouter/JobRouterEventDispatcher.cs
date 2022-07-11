@@ -110,7 +110,6 @@ internal class JobRouterEventDispatcher : IEventDispatcher<Router>, IJobRouterEv
                 if (OnWorkerOfferRevoked is null) return;
                 await OnWorkerOfferRevoked.Invoke((RouterWorkerOfferRevoked)@event, contextId);
             },
-
         };
     }
 
