@@ -80,11 +80,11 @@ Leveraging .NET's dependency injection framework, add the `IEventPublisher<Calli
 // .NET 6 'minimal API' to handle JobRouter Event Grid HTTP web hook subscription
 app.MapPost("/api/jobRouter", (
     [FromBody] EventGridEvent[] eventGridEvents,
-    [FromServices] IEventPublisher<JobRouter> publisher) =>
+    [FromServices] IEventPublisher<Router> publisher) =>
 {
     foreach (var eventGridEvent in eventGridEvents)
     {
-        publisher.Publish(eventGridEvent.Data, eventGridEvent.EventType);
+        publisher.Publish(eventGridEvent.Data.ToString(), eventGridEvent.EventType);
     }
 
     return Results.Ok();
@@ -94,11 +94,11 @@ app.MapPost("/api/jobRouter", (
 app.MapPost("/api/calls/{contextId}", (
     [FromBody] CloudEvent[] cloudEvent,
     [FromRoute] string contextId,
-    [FromServices] IEventPublisher<CallingServer> publisher) =>
+    [FromServices] IEventPublisher<Calling> publisher) =>
 {
     foreach (var @event in cloudEvent)
     {
-        publisher.Publish(@event.Data, @event.Type, contextId);
+        publisher.Publish(@event.Data.ToString(), @event.Type, contextId);
     }
 
     return Results.Ok();

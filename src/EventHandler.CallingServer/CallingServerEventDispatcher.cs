@@ -1,8 +1,11 @@
-﻿using JasonShave.Azure.Communication.Service.CallingServer.Sdk.Contracts.V2022_11_1_preview.Events;
+﻿// Copyright (c) 2022 Jason Shave. All rights reserved.
+// Licensed under the MIT License.
+
+using JasonShave.Azure.Communication.Service.CallingServer.Sdk.Contracts.V2022_11_1_preview.Events;
 
 namespace JasonShave.Azure.Communication.Service.EventHandler.CallingServer;
 
-internal class CallingServerEventDispatcher : IEventDispatcher<CallingServer>, ICallingServerEventSubscriber
+internal class CallingServerEventDispatcher : IEventDispatcher<Calling>, ICallingServerEventSubscriber
 {
     public event Func<IncomingCall, string?, ValueTask>? OnIncomingCall;
     public event Func<CallConnectedEvent, string?, ValueTask>? OnCallConnected;
@@ -17,7 +20,7 @@ internal class CallingServerEventDispatcher : IEventDispatcher<CallingServer>, I
 
     public event Func<CallConnectionStateChanged, string?, ValueTask>? OnCallConnectionStateChanged;
 
-    private readonly Dictionary<Type, Func<object, string?, ValueTask>> _eventDictionary = new();
+    private readonly Dictionary<Type, Func<object, string?, ValueTask>> _eventDictionary;
 
     public CallingServerEventDispatcher()
     {

@@ -1,9 +1,12 @@
-﻿using AutoFixture;
+﻿// Copyright (c) 2022 Jason Shave. All rights reserved.
+// Licensed under the MIT License.
+
+using AutoFixture;
 using FluentAssertions;
 using JasonShave.Azure.Communication.Service.CallingServer.Sdk.Contracts.V2022_11_1_preview.Events;
 using JasonShave.Azure.Communication.Service.EventHandler.CallingServer;
 
-namespace EventHandler.Tests;
+namespace JasonShave.Azure.Communication.Service.EventHandler.Tests;
 
 public class EventDispatcherTests
 {
@@ -161,7 +164,7 @@ public class EventDispatcherTests
         subject.OnIncomingCall -= HandleIncomingCall;
     }
 
-    [Fact(DisplayName = "EventDispatcher with no subscriber should not throw nullref")]
+    [Fact(DisplayName = "EventDispatcher with no subscriber should not throw null ref")]
     public void EventDispatcher_NullSubscriber_DoesNotThrow()
     {
         // arrange

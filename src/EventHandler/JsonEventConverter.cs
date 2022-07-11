@@ -1,12 +1,15 @@
-﻿using System.Text.Json;
+﻿// Copyright (c) 2022 Jason Shave. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Text.Json;
 
 namespace JasonShave.Azure.Communication.Service.EventHandler;
 
-public class JsonEventConverter : IEventConverter
+internal class JsonEventConverter : IEventConverter
 {
     private readonly JsonSerializerOptions _serializerOptions;
 
-    public JsonEventConverter(JsonSerializerOptions serializerOptions)
+    internal JsonEventConverter(JsonSerializerOptions serializerOptions)
     {
         _serializerOptions = serializerOptions;
     }

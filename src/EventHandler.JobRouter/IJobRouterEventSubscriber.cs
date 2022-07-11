@@ -1,4 +1,7 @@
-﻿using JasonShave.Azure.Communication.Service.JobRouter.Sdk.Contracts.V2021_10_20_preview.Events;
+﻿// Copyright (c) 2022 Jason Shave. All rights reserved.
+// Licensed under the MIT License.
+
+using JasonShave.Azure.Communication.Service.JobRouter.Sdk.Contracts.V2021_10_20_preview.Events;
 
 namespace JasonShave.Azure.Communication.Service.EventHandler.JobRouter;
 

@@ -1,4 +1,7 @@
-﻿using JasonShave.Azure.Communication.Service.JobRouter.Sdk.Contracts.V2021_10_20_preview.Events;
+﻿// Copyright (c) 2022 Jason Shave. All rights reserved.
+// Licensed under the MIT License.
+
+using JasonShave.Azure.Communication.Service.JobRouter.Sdk.Contracts.V2021_10_20_preview.Events;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace JasonShave.Azure.Communication.Service.EventHandler.JobRouter;
@@ -7,9 +10,9 @@ public static class EventHandlerBuilderExtensions
 {
     public static EventHandlerBuilder AddJobRouterEventHandling(this EventHandlerBuilder eventHandlerBuilder)
     {
-        eventHandlerBuilder.Services.AddSingleton<IEventPublisher<JobRouter>, EventPublisher<JobRouter>>();
+        eventHandlerBuilder.Services.AddSingleton<IEventPublisher<Router>, EventPublisher<Router>>();
 
-        var catalog = new EventCatalogService<JobRouter>();
+        var catalog = new EventCatalogService<Router>();
 
         catalog
             .Register<RouterJobCancelled>()
@@ -29,10 +32,10 @@ public static class EventHandlerBuilderExtensions
             .Register<RouterWorkerOfferIssued>()
             .Register<RouterWorkerOfferRevoked>();
 
-        eventHandlerBuilder.Services.AddSingleton<IEventCatalog<JobRouter>>(catalog);
+        eventHandlerBuilder.Services.AddSingleton<IEventCatalog<Router>>(catalog);
 
         var dispatcher = new JobRouterEventDispatcher();
-        eventHandlerBuilder.Services.AddSingleton<IEventDispatcher<JobRouter>>(dispatcher);
+        eventHandlerBuilder.Services.AddSingleton<IEventDispatcher<Router>>(dispatcher);
         eventHandlerBuilder.Services.AddSingleton<IJobRouterEventSubscriber>(dispatcher);
 
         return eventHandlerBuilder;

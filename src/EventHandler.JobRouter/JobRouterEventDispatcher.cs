@@ -1,8 +1,11 @@
-﻿using JasonShave.Azure.Communication.Service.JobRouter.Sdk.Contracts.V2021_10_20_preview.Events;
+﻿// Copyright (c) 2022 Jason Shave. All rights reserved.
+// Licensed under the MIT License.
+
+using JasonShave.Azure.Communication.Service.JobRouter.Sdk.Contracts.V2021_10_20_preview.Events;
 
 namespace JasonShave.Azure.Communication.Service.EventHandler.JobRouter;
 
-internal class JobRouterEventDispatcher : IEventDispatcher<JobRouter>, IJobRouterEventSubscriber
+internal class JobRouterEventDispatcher : IEventDispatcher<Router>, IJobRouterEventSubscriber
 {
     public event Func<RouterJobCancelled, string?, ValueTask>? OnJobCancelled;
     public event Func<RouterJobClassificationFailed, string?, ValueTask>? OnJobClassificationFailed;
@@ -21,7 +24,7 @@ internal class JobRouterEventDispatcher : IEventDispatcher<JobRouter>, IJobRoute
     public event Func<RouterWorkerOfferIssued, string?, ValueTask>? OnWorkerOfferIssued;
     public event Func<RouterWorkerOfferRevoked, string?, ValueTask>? OnWorkerOfferRevoked;
 
-    private readonly Dictionary<Type, Func<object, string?, ValueTask>> _eventDictionary = new();
+    private readonly Dictionary<Type, Func<object, string?, ValueTask>> _eventDictionary;
 
     public JobRouterEventDispatcher()
     {

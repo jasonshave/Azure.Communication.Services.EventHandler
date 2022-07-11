@@ -4,8 +4,6 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyName>JasonShave.Azure.Communication.Service.$(MSBuildProjectName)</AssemblyName>
-    <RootNamespace>JasonShave.Azure.Communication.Service.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <Description>A library using a publish/subscribe pattern to easily handle different events being sent via HTTP web hook callbacks by Azure Communication Services primitives.</Description>
     <Copyright>Jason Shave</Copyright>
@@ -36,13 +34,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<InternalsVisibleTo Include="EventHandler.Tests" />
+		<InternalsVisibleTo Include="JasonShave.Azure.Communication.Service.EventHandler.Tests" />
+		<None Include="..\..\.editorconfig" Link=".editorconfig" />
 		<None Include="..\..\README.md">
 		  <Pack>True</Pack>
 		  <PackagePath>\</PackagePath>
 		</None>
-		<ProjectReference Include="..\EventHandler\EventHandler.csproj"/>
-		<ProjectReference Include="..\CallingServer.Sdk.Contracts\CallingServer.Sdk.Contracts.csproj"/>
+		<ProjectReference Include="..\EventHandler\EventHandler.csproj" />
+		<ProjectReference Include="..\CallingServer.Sdk.Contracts\CallingServer.Sdk.Contracts.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -50,5 +49,9 @@
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
 	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Update="Microsoft.CodeAnalysis.CSharp.Features" Version="4.2.0" />
 	</ItemGroup>
 </Project>

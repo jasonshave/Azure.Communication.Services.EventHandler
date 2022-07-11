@@ -1,7 +1,10 @@
-﻿namespace JasonShave.Azure.Communication.Service.EventHandler;
+﻿// Copyright (c) 2022 Jason Shave. All rights reserved.
+// Licensed under the MIT License.
 
-public class EventCatalogService<TPrimitive> : IEventCatalog<TPrimitive>
-    where TPrimitive : IPrimitivePublisher
+namespace JasonShave.Azure.Communication.Service.EventHandler;
+
+internal class EventCatalogService<TPrimitive> : IEventCatalog<TPrimitive>
+    where TPrimitive : IPrimitive
 {
     private const string _eventPrefix = "Microsoft.Communication.";
     private readonly Dictionary<string, Type> _eventCatalog = new();

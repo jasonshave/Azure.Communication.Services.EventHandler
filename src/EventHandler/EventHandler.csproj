@@ -4,9 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyName>JasonShave.Azure.Communication.Service.$(MSBuildProjectName)</AssemblyName>
-    <RootNamespace>JasonShave.Azure.Communication.Service.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
-    <Company>Jason Shave</Company>
+	  <Company>Jason Shave</Company>
     <Description>An publish/subscribe library used with Azure Communication Services primitives to process events from Event Grid and web hook callbacks.</Description>
     <Copyright>Jason Shave</Copyright>
     <RepositoryType>git</RepositoryType>
@@ -14,8 +12,9 @@
   </PropertyGroup>
 
 	<ItemGroup>
-		<InternalsVisibleTo Include="EventHandler.JobRouter" />
-		<InternalsVisibleTo Include="EventHandler.CallingServer" />
+
+		<InternalsVisibleTo Include="JasonShave.Azure.Communication.Service.EventHandler.CallingServer" />
+		<InternalsVisibleTo Include="JasonShave.Azure.Communication.Service.EventHandler.JobRouter" />
 	</ItemGroup>
 	
 	<ItemGroup>
@@ -32,7 +31,10 @@
 
 	<ItemGroup>
 	  <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
-	  <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.2.0" />
-	  <PackageReference Include="System.Memory.Data" Version="1.0.2" />
+	  <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Update="Microsoft.CodeAnalysis.CSharp.Features" Version="4.2.0" />
 	</ItemGroup>
 </Project>

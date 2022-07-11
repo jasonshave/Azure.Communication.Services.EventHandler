@@ -3,8 +3,6 @@
 
 namespace JasonShave.Azure.Communication.Service.EventHandler;
 
-internal interface IEventDispatcher<TPrimitive>
-    where TPrimitive : IPrimitive
+public interface IPrimitive
 {
-    void Dispatch(object @event, Type eventType, string contextId = default!);
 }

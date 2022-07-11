@@ -48,8 +48,12 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\EventHandler\EventHandler.csproj"/>
-    <ProjectReference Include="..\JobRouter.Sdk.Contracts\JobRouter.Sdk.Contracts.csproj"/>
+    <ProjectReference Include="..\EventHandler\EventHandler.csproj" />
+    <ProjectReference Include="..\JobRouter.Sdk.Contracts\JobRouter.Sdk.Contracts.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Update="Microsoft.CodeAnalysis.CSharp.Features" Version="4.2.0" />
   </ItemGroup>
 
 </Project>

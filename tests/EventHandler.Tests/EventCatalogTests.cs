@@ -1,8 +1,10 @@
+// Copyright (c) 2022 Jason Shave. All rights reserved.
+// Licensed under the MIT License.
+
 using FluentAssertions;
-using JasonShave.Azure.Communication.Service.EventHandler;
 using JasonShave.Azure.Communication.Service.EventHandler.CallingServer;
 
-namespace EventHandler.Tests
+namespace JasonShave.Azure.Communication.Service.EventHandler.Tests
 {
     public class EventCatalogTests
     {
@@ -10,7 +12,7 @@ namespace EventHandler.Tests
         public void Register_Type_Returns_Same_Type()
         {
             // arrange
-            var subject = new EventCatalogService<CallingServer>();
+            var subject = new EventCatalogService<Calling>();
 
             // act
             subject
