@@ -40,6 +40,7 @@ public class EventPublisher<TPrimitive> : IEventPublisher<TPrimitive>
         {
             throw new InvalidOperationException($"Unable to convert type {eventName}");
         }
+
         _eventDispatcher.Dispatch(convertedEvent, eventType, contextId);
     }
 }
