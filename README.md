@@ -74,7 +74,7 @@ For a typical .NET 6 web application, the following configuration can be made to
 
 ## Publishing CloudEvents and EventGridEvents
 
-Leveraging .NET's dependency injection framework, add the `IEventPublisher<CallingServer>` or `IEventPublisher<JobRouter>` to push `Azure.Messaging.CloudEvent` and `Azure.Messaging.EventGrid` messages into the services where their types are automatically cast, deserialized, and the correct event handler is invoked.
+Leveraging .NET's dependency injection framework, add the `IEventPublisher<Calling>` or `IEventPublisher<Router>` to push `Azure.Messaging.CloudEvent` and `Azure.Messaging.EventGrid` messages into the services where their types are automatically cast, deserialized, and the correct event handler is invoked.
 
 ```csharp
 // .NET 6 'minimal API' to handle JobRouter Event Grid HTTP web hook subscription
