@@ -13,7 +13,7 @@ public class EventPublisher<TPrimitive> : IEventPublisher<TPrimitive>
     private readonly IEventDispatcher<TPrimitive> _eventDispatcher;
     private readonly IEventConverter _eventConverter;
 
-    internal EventPublisher(
+    public EventPublisher(
         ILogger<EventPublisher<TPrimitive>> logger,
         IEventCatalog<TPrimitive> eventCatalog,
         IEventDispatcher<TPrimitive> eventDispatcher,
