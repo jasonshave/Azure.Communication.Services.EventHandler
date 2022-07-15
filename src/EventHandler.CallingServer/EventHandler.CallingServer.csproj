@@ -40,8 +40,8 @@
 		  <Pack>True</Pack>
 		  <PackagePath>\</PackagePath>
 		</None>
-		<ProjectReference Include="..\EventHandler\EventHandler.csproj" />
 		<ProjectReference Include="..\CallingServer.Sdk.Contracts\CallingServer.Sdk.Contracts.csproj" />
+		<ProjectReference Include="..\EventHandler\EventHandler.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

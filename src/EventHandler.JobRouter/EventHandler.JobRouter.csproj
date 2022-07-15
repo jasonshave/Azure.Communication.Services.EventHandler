@@ -50,8 +50,8 @@
   </ItemGroup>
   
   <ItemGroup>
-      <InternalsVisibleTo Include="JasonShave.Azure.Communication.Service.EventHandler.Tests"/>
-	  <ProjectReference Include="..\EventHandler\EventHandler.csproj" />
+      <InternalsVisibleTo Include="JasonShave.Azure.Communication.Service.EventHandler.Tests" />
+      <ProjectReference Include="..\EventHandler\EventHandler.csproj" />
     <ProjectReference Include="..\JobRouter.Sdk.Contracts\JobRouter.Sdk.Contracts.csproj" />
   </ItemGroup>
 
