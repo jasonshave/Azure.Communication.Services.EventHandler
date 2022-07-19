@@ -10,5 +10,11 @@ public interface ICallingServerEventSubscriber
     event Func<IncomingCall, string?, ValueTask>? OnIncomingCall;
     event Func<CallConnectedEvent, string?, ValueTask>? OnCallConnected;
     event Func<CallDisconnectedEvent, string?, ValueTask>? OnCallDisconnected;
-    event Func<CallConnectionStateChanged, string?, ValueTask>? OnCallConnectionStateChanged;
+    event Func<AddParticipantSucceeded, string?, ValueTask>? OnAddParticipantSucceeded;
+    event Func<AddParticipantFailed, string?, ValueTask>? OnAddParticipantFailed;
+    event Func<CallTransferAccepted, string?, ValueTask>? OnCallTransferAccepted;
+    event Func<CallTransferFailed, string?, ValueTask>? OnCallTransferFailed;
+    event Func<RemoveParticipantSucceeded, string?, ValueTask>? OnRemoveParticipantSucceeded;
+    event Func<RemoveParticipantFailed, string?, ValueTask>? OnRemoveParticipantFailed;
+    event Func<ParticipantUpdated, string?, ValueTask>? OnParticipantUpdated;
 }

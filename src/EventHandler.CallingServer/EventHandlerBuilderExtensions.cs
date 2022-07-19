@@ -18,6 +18,13 @@ public static class EventHandlerBuilderExtensions
             .Register<IncomingCall>()
             .Register<CallConnectedEvent>()
             .Register<CallDisconnectedEvent>()
+            .Register<CallTransferAccepted>()
+            .Register<CallTransferFailed>()
+            .Register<AddParticipantSucceeded>()
+            .Register<AddParticipantFailed>()
+            .Register<RemoveParticipantSucceeded>()
+            .Register<RemoveParticipantFailed>()
+            .Register<ParticipantUpdated>()
             .Register<CallConnectionStateChanged>();
 
         eventHandlerBuilder.Services.AddSingleton<IEventCatalog<Calling>>(catalog);
