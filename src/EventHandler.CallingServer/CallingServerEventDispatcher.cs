@@ -17,7 +17,6 @@ internal class CallingServerEventDispatcher : IEventDispatcher<Calling>, ICallin
     public event Func<RemoveParticipantSucceeded, string?, ValueTask>? OnRemoveParticipantSucceeded;
     public event Func<RemoveParticipantFailed, string?, ValueTask>? OnRemoveParticipantFailed;
     public event Func<ParticipantUpdated, string?, ValueTask>? OnParticipantUpdated;
-
     public event Func<CallConnectionStateChanged, string?, ValueTask>? OnCallConnectionStateChanged;
 
     private readonly Dictionary<Type, Func<object, string?, ValueTask>> _eventDictionary;

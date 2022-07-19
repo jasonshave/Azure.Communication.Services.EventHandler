@@ -17,4 +17,5 @@ public interface ICallingServerEventSubscriber
     event Func<RemoveParticipantSucceeded, string?, ValueTask>? OnRemoveParticipantSucceeded;
     event Func<RemoveParticipantFailed, string?, ValueTask>? OnRemoveParticipantFailed;
     event Func<ParticipantUpdated, string?, ValueTask>? OnParticipantUpdated;
+    event Func<CallConnectionStateChanged, string?, ValueTask>? OnCallConnectionStateChanged;
 }
